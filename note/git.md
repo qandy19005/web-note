@@ -16,6 +16,11 @@ Q: Commit返回
 4. 查看遠端分支 Commit
  git log origin/分支名稱
 
+Q: reset (soft hard mixed)
+
+Q: rebase vs merge
+https://medium.com/starbugs/git-%E6%88%91%E4%BB%A5%E7%82%BA%E7%9A%84-git-rebase-%E8%88%87%E5%92%8C-git-merge-%E5%81%9A%E5%90%88%E4%BD%B5%E5%88%86%E6%94%AF%E7%9A%84%E5%B7%AE%E7%95%B0-cacd3f45294d
+
 Q: Permission denied
 1. git config --global --list (檢查帳號)
 2. git config --global user.name qandy19005 (設定帳號)

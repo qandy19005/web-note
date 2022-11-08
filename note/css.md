@@ -7,6 +7,14 @@ own css
 scope
 maintain
 
+css 畫面smooth
+https://www.youtube.com/watch?v=Xc6G3oV24yE
+1.垂直文字 0:46
+2.水平scroll滑順 3:25
+3.resize div 可以拉動大小 5:55
+4.文字吃背景色 7:46
+5.防止文字被鼠標選擇 10:32
+
 css3動畫教學
 https://eyesofkids.gitbooks.io/css3/content/contents/intro.html
 

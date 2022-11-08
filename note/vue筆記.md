@@ -181,6 +181,9 @@ put reusable functions
  <div #default>
  <div #fallback>
 
+- Vue3 TypeScript
+0. https://www.youtube.com/watch?v=JfI5PISLr9w
+
 # Q&A?
 
 Q: Why needs index for v-for key? 
@@ -191,6 +194,26 @@ A: 父: Provide 子: Inject
 
 Q: 如何保留原頁面資料返回時不重打API?
 A: <keep-alive> 緩存元件
+情境
+1. 減少呼叫 API 的次數
+2. 多步式表單填寫
+3. Tab 標籤切換內容
+參考: https://ithelp.ithome.com.tw/articles/10271305
 
 Q: 如何滑順的移動到目的地標籤?
 A: this.$refs['element'].scrollIntoView({behavior: 'smooth'});
+
+Q: 父子元件綁定?
+A: 
+- 父 -
+<componentInput v-model="inputValue">
+- 子 -
+<input type="text" :value="inputValue" @input="$emit('input', $event.target.value)">
+:value做v-bind同步資料
+:@input透過$emit改變父層綁定在子元件上的input事件
+
+參考: https://pinkymini.pixnet.net/blog/post/32300350-%E3%80%90%E5%89%8D%E7%AB%AF%E6%96%B0%E6%89%8B%E6%97%A5%E8%A8%98%E3%80%91vue.js%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98%284%29-%E5%9C%A8%E8%87%AA%E5%AE%9A%E7%BE%A9
+
+Q: 如何達到雙向綁定?
+A: Vue 內部使用了 Object.defineProperty() 來實現雙向綁定，通過這個函數可以監聽到 set 和 get 的事件。
+參考: https://ustbhuangyi.github.io/vue-analysis/v2/extend/v-model.html#%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0
