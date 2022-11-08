@@ -95,6 +95,8 @@ refer: https://linguinecode.com/post/when-to-use-useref-and-uselayouteffect
 1. F 檔案大小 < C 檔案大小
 2. 
 
+## Memo hook
+https://www.youtube.com/watch?v=6-BfMpTT2PE
 
 # Q&A?
 

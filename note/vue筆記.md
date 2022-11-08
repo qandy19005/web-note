@@ -121,6 +121,13 @@ setup(){
 - setup
 1.data 2.function 3.computed/watch 4.lifecycle hooks
 - ref / reactive
+不同點
+ref 可以接受任何型態的資料，但是不會對物件或陣列內部的屬性變動做監聽，可給ref宣告的object賦予新的object
+
+reactive 只能接受 Object 或 Array，會對內部(deep)的屬性變動做深層的監聽，取資料時不需要 .value，無法給reactive宣告的object賦予新的object
+ex: const user = reactive({}); user = { name: Andy } 會報錯
+const user = reactive({ name: ''}); user.name = 'Andy' 可直接宣告
+
 宣告 ref / reactive data
 ex: const refName = ref('Andy'); // 能在template使用 {{ name }}
 ex: const reactiveName = reactive('Andy'); // 能在template使用 {{ name }}

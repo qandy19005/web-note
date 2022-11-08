@@ -1,3 +1,9 @@
+Q: Push步驟
+1. git status
+2. git add .
+3. git commit -m ""
+4. git push origin -u asa
+
 Q: Commit返回
 1. 查看Commit
  git log 
