@@ -10,6 +10,10 @@ Q: Commit返回
 4. 查看遠端分支 Commit
  git log origin/分支名稱
 
+Q: reset (soft hard mixed)
+
+Q: rebase vs merge
+
 Q: Permission denied
 1. git config --global --list (檢查帳號)
 2. git config --global user.name qandy19005 (設定帳號)
