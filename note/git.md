@@ -26,4 +26,4 @@ Q: Permission denied
 2. git config --global user.name qandy19005 (設定帳號)
 3. git config --global user.email qandy19005@gmail.com (設定信箱)
 4. ssh-keygen -t rsa -C qandy19005@gmail.com (產生sshkey Enter到底)
-5. /Users/***/.ssh (key存放的位置)
+5. /Users/***/.ssh (key存放的位置) (安裝的時候會顯示路徑)
