@@ -6,3 +6,6 @@
 1.Click F1
 2.Terminal: Select Default Profile
 3.選擇bash
+
+## Smooth
+https://www.youtube.com/watch?v=PWCkrHHyvjE

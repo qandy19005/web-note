@@ -4,3 +4,6 @@
 
 ## 顯示隱藏檔案
 1. command + shift + .
+
+## 查看 Host Database
+1. cat /etc/hosts

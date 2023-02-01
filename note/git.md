@@ -1,8 +1,11 @@
+Q: Branch 重新命名
+git branch -m {new name}
+
 Q: Push步驟
 1. git status
 2. git add .
 3. git commit -m ""
-4. git push origin -u asa
+4. git push origin -u asa (Feature也可用)
 
 Q: Commit返回
 1. 查看Commit
@@ -15,11 +18,19 @@ Q: Commit返回
  git push origin 分支名稱 --force
 4. 查看遠端分支 Commit
  git log origin/分支名稱
-
+5. 查看遠端所有分之
+ git branch -r
 Q: reset (soft hard mixed)
+6. 刪除遠端分支
+ git push origin :分支名稱
 
 Q: rebase vs merge
 https://medium.com/starbugs/git-%E6%88%91%E4%BB%A5%E7%82%BA%E7%9A%84-git-rebase-%E8%88%87%E5%92%8C-git-merge-%E5%81%9A%E5%90%88%E4%BD%B5%E5%88%86%E6%94%AF%E7%9A%84%E5%B7%AE%E7%95%B0-cacd3f45294d
+
+Q: 合併commit
+1. git rebase -i {後一個commit}
+2. pick > squash
+
 
 Q: Permission denied
 1. git config --global --list (檢查帳號)
@@ -27,3 +38,13 @@ Q: Permission denied
 3. git config --global user.email qandy19005@gmail.com (設定信箱)
 4. ssh-keygen -t rsa -C qandy19005@gmail.com (產生sshkey Enter到底)
 5. /Users/***/.ssh (key存放的位置) (安裝的時候會顯示路徑)
+
+Q: Stash暫存步驟
+1. git stash save
+2. git stash list 顯示所有暫存
+3. git stash pop 取得最新
+4. git stash drop 刪除最新
+5. git stash clear 清空所有暫存
+
+- Git flow
+develop > release(for test) > master > develop
