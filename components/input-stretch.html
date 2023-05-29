@@ -1,0 +1,18 @@
+<html>
+<head>
+<title>HTML tooltip</title>
+</head>
+<body style="padding:100px;">
+    <textarea id="myTextarea" style="resize: none;"></textarea>
+</div>
+<script>
+const textarea = document.getElementById("myTextarea");
+if(textarea){
+  textarea.addEventListener("input", () => {
+    textarea.style.height = "auto";
+    textarea.style.height = textarea.scrollHeight + "px";
+  })
+}
+</script>
+</body>
+</html>

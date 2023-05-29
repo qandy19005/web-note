@@ -14,3 +14,8 @@ https://www.dofactory.com/javascript/design-patterns
 ## MP4影片處理
 Screen to 開始 Screen leave 結束 
 時間 1:01:27 > https://www.youtube.com/watch?v=tzaHrMx1ncc 
+
+## iframe
+若需用js更改或處理iframe內部的element會有[同源安全策略]問題
+error: Blocked a frame with origin "null" from accessing a cross-origin frame
+[refer] https://stackoverflow.com/questions/29983786/blocked-a-frame-of-origin-null-from-accessing-a-cross-origin-frame-chrome

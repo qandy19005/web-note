@@ -1,3 +1,15 @@
+## Typescript command line 
+[refer] https://www.typescriptlang.org/docs/handbook/compiler-options.html
+[script] tsc --project tsconfig.production.json
+[des] Emit files referenced in with the compiler settings from tsconfig.production.json
+--project: Compile the project given the path to its configuration file, or to a folder with a 'tsconfig.json'.
+
+[script] tsc-alias -p tsconfig.json
+[des]在 typescript 編譯後用相對路徑替換別名路徑。您可以通過提供 baseUrl 的相對路徑來添加引用 tsconfig.json 項目之外的其他項目的別名
+
+## Typescript tsconfig file
+[refer] https://ithelp.ithome.com.tw/m/articles/10263733
+
 ## Typescript Error Code
 [refer] https://typescript.tv/errors/
 
@@ -135,8 +147,9 @@ type bikeApi = ReturnType<typeof BikeApi>
 6.      options.map(item => ({ value: item, label: item }))
 7.    return {
 8.      floatingFilterComponent: FloatingFilter,
-.
-.
+
+# enum
+enum 可用 keyOf
 
 ## enum as type
 [des] 宣告enum為可用型別
