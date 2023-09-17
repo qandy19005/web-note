@@ -1,65 +1,58 @@
 ## v-if v-show
-### 同
+- 同
 1. 都是控制DOM是否顯示
 
-### 不同
+- 不同
 1. v-show 使用css--display:none/block控制元素顯示 dom始終存在
 2. v-if顯示隱藏dom元素整個新增或刪除
 3. v-if會重建與銷毀元件, v-show是css切換
 4. v-if, v-else-if, v-else "切換過程"元件會被確認銷毀跟重建當為true才會真的渲染到Dom
 5. v-show 不會有生命週期發生, v-if重建會觸發beforeCreate ~ mounted生命週期,銷毀觸發beforeDestroy、destroyed方法
 
-性能
-v-if 切換效能耗費高
+### 性能
+v-if 切換效能耗費高<br>
 v-show 初始渲染消耗高
 
-解析
-都是取得節點上的判斷式來決定是否顯示或渲染
+### 解析
+都是取得節點上的判斷式來決定是否顯示或渲染<br>
 
-v-show
+- v-show
 1. render和staticRenderFns 生成虛擬VNODE節點
 
 2. 該節點包含創建DOM節點所需信息vm.patch函數通過虛擬DOM算法利用VNODE節點創建真實
 
 3. DOM節點v-show(isVShowDirective)原理不管初始條件是什麼，元素總是會被渲染
-
+``` javascript
 if (child.data.directives && child.data.directives.some(isVShowDirective)) {
   child.data.show = true;
 }
+```
 
+- v-if
+1. 返回一個node節點，render函數通過表達式的值來決定是否生成DOM
 
-v-if
-1.返回一個node節點，render函數通過表達式的值來決定是否生成DOM
+### 使用場景
+- v-if 與 v-show 都能控制dom元素在頁面的顯示
 
-使用場景
-v-if 與 v-show 都能控制dom元素在頁面的顯示
+- v-if 相比 v-show 開銷更大（直接操作dom節點增加與刪除）
 
-v-if 相比 v-show 開銷更大（直接操作dom節點增加與刪除）
+- 如果需要非常頻繁地切換，則使用 v-show 較好
 
-如果需要非常頻繁地切換，則使用 v-show 較好
-
-如果在運行時條件很少改變，則使用 v-if 較好
+- 如果在運行時條件很少改變，則使用 v-if 較好
 
 * vm.patch > 否存在舊VNode 節點 prevVnode ，確定組件是第一次渲染還是再次更新
 * node節點 html、元素、屬性、文本、註釋、整個文件
 
-參考: https://ppfocus.com/0/au8030925.html
+[refer]<br> https://ppfocus.com/0/au8030925.html
 
------
-method watch computed 在生命週期如何流程是順的 避免不當使用
+## Vue Router
 
-設計模型參考:https://iter01.com/14656.html
+### children用途
+- 保留原本path component view
+- 並在原本template使用router-view
+- 則顯示該path內children的path內容
 
-vue參考 https://book.vue.tw/CH1/1-7-lifecycle.html
-
-# Vue Router
-
-- children用途
-保留原本path component view
-並在原本template使用router-view
-則顯示該path內children的path內容
-
-# vue官網需讀
+## vue官網需讀
 
 ## 深入組件
 ### 非Prop的Attribute
@@ -73,6 +66,7 @@ vue參考 https://book.vue.tw/CH1/1-7-lifecycle.html
 ### 插件
 
 # Vue 2
+```
 生命週期 Options API 不需呼叫可直接使用
 new instance - 建置vue實體
 beforeCreate - data, methods 尚未被設置
@@ -100,8 +94,9 @@ destroyed - vue實體所有資料方法被關閉或移除,無法在此對vue實�
 - Slot
 
 - 動態組件
-
+```
 # Vue JS 3
+```
 - 生命週期
 setup > created > mounted
 
@@ -183,37 +178,42 @@ put reusable functions
 
 - Vue3 TypeScript
 0. https://www.youtube.com/watch?v=JfI5PISLr9w
-
+```
 # Q&A?
 
-Q: Why needs index for v-for key? 
+Q: Why needs index for v-for key? <br>
 A: 為了避免重複產生DOM元素而浪費資源
 
-Q: 子層越級使用父層資料?
+Q: 子層越級使用父層資料? <br>
 A: 父: Provide 子: Inject
 
-Q: 如何保留原頁面資料返回時不重打API?
-A: <keep-alive> 緩存元件
-情境
+Q: 如何保留原頁面資料返回時不重打API? <br>
+A: `<keep-alive>` 緩存元件
+- 情境
 1. 減少呼叫 API 的次數
 2. 多步式表單填寫
 3. Tab 標籤切換內容
-參考: https://ithelp.ithome.com.tw/articles/10271305
+[refer]<br> https://ithelp.ithome.com.tw/articles/10271305
 
-Q: 如何滑順的移動到目的地標籤?
-A: this.$refs['element'].scrollIntoView({behavior: 'smooth'});
-
-Q: 父子元件綁定?
+Q: 如何滑順的移動到目的地標籤?<br>
+A:
+``` javascript 
+this.$refs['element'].scrollIntoView({behavior: 'smooth'});
+```
+Q: 父子元件綁定?<br>
 A: 
-- 父 -
+- 父 
+``` html
 <componentInput v-model="inputValue">
-- 子 -
+```
+- 子 
+``` html
 <input type="text" :value="inputValue" @input="$emit('input', $event.target.value)">
-:value做v-bind同步資料
-:@input透過$emit改變父層綁定在子元件上的input事件
+```
+- :value做v-bind同步資料
+- :@input透過$emit改變父層綁定在子元件上的input事件<br>
+[refer]<br> https://pinkymini.pixnet.net/blog/post/32300350-%E3%80%90%E5%89%8D%E7%AB%AF%E6%96%B0%E6%89%8B%E6%97%A5%E8%A8%98%E3%80%91vue.js%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98%284%29-%E5%9C%A8%E8%87%AA%E5%AE%9A%E7%BE%A9
 
-參考: https://pinkymini.pixnet.net/blog/post/32300350-%E3%80%90%E5%89%8D%E7%AB%AF%E6%96%B0%E6%89%8B%E6%97%A5%E8%A8%98%E3%80%91vue.js%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98%284%29-%E5%9C%A8%E8%87%AA%E5%AE%9A%E7%BE%A9
-
-Q: 如何達到雙向綁定?
-A: Vue 內部使用了 Object.defineProperty() 來實現雙向綁定，通過這個函數可以監聽到 set 和 get 的事件。
-參考: https://ustbhuangyi.github.io/vue-analysis/v2/extend/v-model.html#%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0
+Q: 如何達到雙向綁定?<br>
+A: Vue 內部使用了 Object.defineProperty() 來實現雙向綁定，通過這個函數可以監聽到 set 和 get 的事件。<br>
+[refer]<br> https://ustbhuangyi.github.io/vue-analysis/v2/extend/v-model.html#%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0

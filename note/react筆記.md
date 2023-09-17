@@ -32,6 +32,8 @@ JSX -> babel -> React.creatElement...<br>
 ReactDOM: https://www.youtube.com/watch?v=OFHAIpw2oZI&list=PLDyQo7g0_nsVHmyZZpVJyFn5ojlboVEhE&index=6<br>
 JSX: https://www.youtube.com/watch?v=BS9g6Z3lbBU&list=PLDyQo7g0_nsVHmyZZpVJyFn5ojlboVEhE&index=8<br>
 ### First-basic
+[refer] <br>
+https://www.youtube.com/watch?v=dGcsHMXbSOA&list=PLDyQo7g0_nsVHmyZZpVJyFn5ojlboVEhE
 1. 建立function component
 2. return <></>
 3. export default function component
@@ -39,19 +41,20 @@ JSX: https://www.youtube.com/watch?v=BS9g6Z3lbBU&list=PLDyQo7g0_nsVHmyZZpVJyFn5o
 5. useState
 6. props
 7. map(data =>())<br>
-[refer] <br>
-https://www.youtube.com/watch?v=dGcsHMXbSOA&list=PLDyQo7g0_nsVHmyZZpVJyFn5ojlboVEhE
 
 ### Second-get api data
+[refer] <br>
+https://www.youtube.com/watch?v=U9T6YkEDkMo&list=PLDyQo7g0_nsVHmyZZpVJyFn5ojlboVEhE&index=2
 8. useEffect
 9. import style from './xxx.css'
 10. input onChange()
 11. e.target.value & e.preventDefault();
 12. fetch async await promise <br>
-[refer] <br>
-https://www.youtube.com/watch?v=U9T6YkEDkMo&list=PLDyQo7g0_nsVHmyZZpVJyFn5ojlboVEhE&index=2
+
 
 ### Third-router 
+[refer] <br>
+https://www.youtube.com/watch?v=Law7wfdg_ls&list=PLDyQo7g0_nsVHmyZZpVJyFn5ojlboVEhE&index=3
 13. react-router-dom
   a. browserRouter 包住所有component 
   b. route  <Route path="/home" component={home}>
@@ -59,14 +62,16 @@ https://www.youtube.com/watch?v=U9T6YkEDkMo&list=PLDyQo7g0_nsVHmyZZpVJyFn5ojlboV
   d. exact <Route path="/home" exact component={home}> path完全正確才顯示
   e. link <Link to="/home">Home</Link>
 14. match >> function child({match}) {}; 取得router資訊<br>
-[refer] <br>
-https://www.youtube.com/watch?v=Law7wfdg_ls&list=PLDyQo7g0_nsVHmyZZpVJyFn5ojlboVEhE&index=3
+
 ### Fourth-state management 
-15. context api > contextFile > import createContext > export provider > useContext
-16. 用到 context的地方都會rerender<br>
 [refer] <br>
 https://www.youtube.com/watch?v=35lXWvCuM8o&list=PLDyQo7g0_nsVHmyZZpVJyFn5ojlboVEhE&index=4
+15. context api > contextFile > import createContext > export provider > useContext
+16. 用到 context的地方都會rerender<br>
+
 ### Fifth- redux(vuex) 狀態管理 redux react-redux(hook) | Redux DevTools(chrome plugin) 
+[refer]<br>
+https://www.youtube.com/watch?v=CVpUuw9XSjY&list=PLDyQo7g0_nsVHmyZZpVJyFn5ojlboVEhE&index=5
 17. ACTION(action) 宣告要做的事情
 18. REDUCER(call action & called by dispatch) 
 - 宣告state
@@ -83,8 +88,7 @@ https://www.youtube.com/watch?v=35lXWvCuM8o&list=PLDyQo7g0_nsVHmyZZpVJyFn5ojlboV
 - [main.js]<Provider store={appStore}><app/></Provider>
 - [app.js] useSelector(取得state), useDispatch(呼叫action) -> react-redux
   import { function } from './actions/index.js';<br>
-[refer]<br>
-https://www.youtube.com/watch?v=CVpUuw9XSjY&list=PLDyQo7g0_nsVHmyZZpVJyFn5ojlboVEhE&index=5
+
 ### 建立一個fetch function (最後一段影片)
 [refer]<br>
 https://www.youtube.com/watch?v=GGo3MVBFr1A
@@ -243,7 +247,7 @@ useEffect(() => {
 [refer]<br>https://medium.com/hannah-lin/jest-enzyme-1-%E5%B0%B1%E5%BE%9E%E8%A8%88%E6%95%B8%E5%99%A8%E9%96%8B%E5%A7%8B-bd4d7d223f72
 
 ## Q&A?
-Q: 更改物件某特定值
+Q: 更改物件某特定值<br>
 A: 
 ``` javascript
 const [input, setInput] = setState({
@@ -257,7 +261,7 @@ setInput({
 	name: newName
 })
 ```
-Q: 如何宣告變數並修改變數?
+Q: 如何宣告變數並修改變數?<br>
 A: 
 ``` javascript
 import { useState } from 'react';
@@ -266,16 +270,16 @@ const [data, setData] = useState(0);
 data 會是 0<br>
 改變data直接 setData(data + 1)
 
-Q: 如何使用變數管理?
+Q: 如何使用變數管理?<br>
 A:
 ``` javascript
 import { createContext } from 'react';
 ```
-Q: 父層變動如何防止子層渲染?
+Q: 父層變動如何防止子層渲染?<br>
 A: 
 ``` javascript
 import { PureComponent } from 'react';
 ```
-Q: 隱藏子層最外層標籤?
+Q: 隱藏子層最外層標籤?<br>
 A: 使用 `<Fragment>` or `<></> `
 

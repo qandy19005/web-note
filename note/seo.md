@@ -1,4 +1,5 @@
-網站：
+## Note
+## 網站
 1.	網域命名
 -	關鍵字網域
 -	.com優先選擇
@@ -18,7 +19,7 @@
 -	針對圖片、css、 javascript為主進行優化
 -	外掛使用控制(避免不必要的程式碼載入)
 
-內文：
+## 內文
 1.	SEO優化順序 曝光率>點擊與點閱率>內容優化
 2.	標題選擇與命名
 -	H1大標包含關鍵字
@@ -42,8 +43,6 @@
 12.	提高網站權威性，反向連結建立(從他人網站連入我們網站)
 13. 撰寫完成將URL送Google網站管理員審查加入索引
 
-免費SEO學習課程:
-https://inboundmarketing.com.tw/seo/seo%e8%aa%b2%e7%a8%8b.html
-
-參考資料：
+## Tutorial:
+https://inboundmarketing.com.tw/seo/seo%e8%aa%b2%e7%a8%8b.html<br>
 https://inboundmarketing.com.tw/seo/seo.html
