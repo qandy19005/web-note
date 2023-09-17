@@ -3,7 +3,9 @@
 ## CommonJs規範
 [refer1]<br /> https://medium.com/@jedy05097952/%E6%A8%A1%E7%B5%84%E5%8C%96-2-commonjs-26d2b2071d80<br />
 [refer2]<br /> https://dwatow.github.io/2018/02-13-js-module-require-exports/<br />
-[def]<br /> 同步 | 一個檔案視為一個模組，讓模組回傳該回傳的東西<br />
+[def]<br />
+- 同步
+- 一個檔案視為一個模組，讓模組回傳該回傳的東西
 [example] <br />
 - Commonjs.js
 ``` javascript
@@ -67,20 +69,22 @@ const myFunc = function (a, b) {
 
 ### 箭頭函示
 [methods] <br />
+``` javascript
 const sayHello = () => `Hello!`;
+```
 [note]<br />
 - 不具 Hoisting 效果
 - 沒有 arguments
 - this 的運作方式與傳統函數不同 **在vue中為windows所以vue中不會宣告箭頭函式
 
 ## 陣列
-- 複製陣列
+### 複製陣列
 [methods] <br />
 [...]
 ``` javascript
 const newList = [...list]
 ```
-- 判斷是否為陣列
+### 判斷是否為陣列
 [methods] <br />
 constructor === Array
 // 判斷物件陣列是否存在 在判斷是否為陣列
@@ -89,14 +93,14 @@ variable.value && variable.value.constructor === Array
 ```
 [refer]<br /> https://ithelp.ithome.com.tw/articles/10219475
 
-- 物件屬性排序
+### 物件屬性排序
 [methods] <br />
 ``` javascript
 Array.sort(function (a, b) {
   return a.id - b.id;
 });
 ```
-- 取得物件屬性唯一值
+### 取得物件屬性唯一值
 [methods] <br />
 ``` javascript
 const set = new Set();
@@ -105,7 +109,7 @@ return !set.has(item.id) ? set.add(item.id) : false});
 ```
 [refer]<br /> https://guahsu.io/2018/04/JavaScript-Duplicates-Array-Object/
 
-- 判斷是否在陣列內
+### 判斷是否在陣列內
 [methods] <br />
 ``` javascript
 array.includes(<param>)
@@ -113,14 +117,14 @@ array.includes(<param>)
 [return]<br />
 Boolean
 
-- 取得陣列第一筆
+### 取得陣列第一筆
 [methods]<br />
 ``` javascript
 first = [...arr].shift();
 ```
 [refer]<br /> https://www.techiedelight.com/get-first-element-array-javascript/
 
-- 陣列中加入符號轉字串
+### 陣列中加入符號轉字串
 [methods] <br />
 ``` javascript
 array.join(',')
@@ -128,7 +132,7 @@ array.join(',')
 [return]<br />
 "array1,array2,array3"
 
-- 移除重複陣列
+### 移除重複陣列
 [methods] <br />
 ``` javascript
 array.filter((element, index)=> array.indexOf (element) === index)
@@ -136,7 +140,7 @@ array.filter((element, index)=> array.indexOf (element) === index)
 [methods] <br />
 Lodash _.uniq(array)
 
-- 移除重複陣列物件
+### 移除重複陣列物件
 [methods]
 ``` javascript
 const set = new Set();
@@ -144,7 +148,7 @@ const filteredArray = array.filter((item) => {
     return !set.has(item.uuid) ? set.add(item.uuid) : false;
 })
 ```
-- 合併相同id物件的陣列
+### 合併相同id物件的陣列
 [example]
 ``` javascript
 combineArray = firstDatas.map(list => {
@@ -155,7 +159,7 @@ combineArray = firstDatas.map(list => {
 })
 ```
 ## 物件
-- Object.assign({}, text) 
+### Object.assign({}, text) 
 [des] 合併(merges)或混合(Mixins)、拷貝
 [example] <br />
 copy:<br>
@@ -171,7 +175,7 @@ const o3 = { c: 3 }
 const obj = Object.assign({}, o1, o2, o3)
 console.log(obj) // { a: 1, b: 2, c: 3 } 傳入放愈後面位置的物件，它的屬性會覆蓋掉前面的物件
 ```
-- 物件陣列深層複製
+### 物件陣列深層複製
 [description]<br>
 更改物件深層值不互相影響
 1. 
@@ -180,26 +184,28 @@ let newAry = JSON.parse(JSON.stringify(ary))
  ```
 2. lodash.clonedeep 複製多層物件
 
-- (?.)在進入key之前，檢查物件${object}是否為null或undefind
+### (?.)
 [methods] ${object}?.key <br />
+[description] <br />
+在進入key之前，檢查物件${object}是否為null或undefind
 [example] <br />
 user?.name = user && user.name(先判斷user是否存在在判斷)
 [advanced] <br />
-- (??)
+### (??)
 [example] A ? A : B = A ?? B <br />
 Q: 若profile為null或undefind則帶入defaultProfile<br />
 A: const defaultProfile = { age: 0, contry: 'America' } ;<br />
    user?.profile ?? defaultProfile;
 
-- 若物件為null照正常判斷
+### 若物件為null照正常判斷
 [methods] (${object} || {}).key <br />
 
-- 判斷物件是否為空
+### 判斷物件是否為空
 [methods] Object.keys(${object}).length === 0 <br />
 [return]<br />
  Boolean
 
-- 物件跑forEach
+### 物件跑forEach
 [methods] 1. Object.keys(${object}).forEach<br />
   顯示object key 
 [methods] 2. Object.values(${object}).forEach<br />
@@ -208,7 +214,7 @@ A: const defaultProfile = { age: 0, contry: 'America' } ;<br />
   顯示 object key, value
 ## File
 
-- 判斷File格式 
+### 判斷File格式 
 [methods] ${file} instanceof File <br />
 [return]<br />
  Boolean
@@ -231,14 +237,14 @@ const localTimeString = localDate.toLocaleTimeString(undefined, {
 ```
 ## Lodash
 
-處理陣列比對
+### 處理陣列比對
 1. intersectionBy
 2. keyby+filter
 
-陣列重新處理
+### 陣列重新處理
 - map
 
-陣列篩選
+### 陣列篩選
 - filter
 ## Prototype
 [refer]<br />
@@ -256,7 +262,7 @@ Screen to 開始 Screen leave 結束
 error: Blocked a frame with origin "null" from accessing a cross-origin frame<br />
 [refer]<br /> https://stackoverflow.com/questions/29983786/blocked-a-frame-of-origin-null-from-accessing-a-cross-origin-frame-chrome
 ## 其他
-- 斷言
+### 斷言
 [methods] 辨識後加上 ! <br />
 [example] <br />
 ``` javascript
