@@ -217,3 +217,29 @@ A:
 Q: 如何達到雙向綁定?<br>
 A: Vue 內部使用了 Object.defineProperty() 來實現雙向綁定，通過這個函數可以監聽到 set 和 get 的事件。<br>
 [refer]<br> https://ustbhuangyi.github.io/vue-analysis/v2/extend/v-model.html#%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0
+
+Q: shallowRef<br>
+[尚未查資料]<br>
+
+Q: 3.0 全域使用<br>
+[宣告]
+``` javascript
+const install = app => {
+  app.config.globalProperties.<Params> = <Params>
+}
+export { install as default }
+
+app.use(<import>);
+```
+[呼叫]
+``` javascript
+import { getCurrentInstance } from 'vue';
+const { proxy } = getCurrentInstance();
+proxy.{<Params>}
+```
+
+## 其他
+- 父子層HTML<br>
+[問題] <br>子層資料判斷綁定父層元件<br>
+[說明] <br>若子層引用父層元件，父層需要insertBefore需要先render再被子層處理才不會有問題<br>
+[錯誤範例] <br>router-link 不能使用 (子層)v-if 會直接影響 DOMException Failed to execute 'insertBefore' on 'Node'
