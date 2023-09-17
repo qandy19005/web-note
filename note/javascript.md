@@ -1,9 +1,9 @@
 ## Note
 
 ## CommonJs規範
-[refer1]<br /> https://medium.com/@jedy05097952/%E6%A8%A1%E7%B5%84%E5%8C%96-2-commonjs-26d2b2071d80
-[refer2]<br /> https://dwatow.github.io/2018/02-13-js-module-require-exports/
-[def]<br /> 同步 | 一個檔案視為一個模組，讓模組回傳該回傳的東西
+[refer1]<br /> https://medium.com/@jedy05097952/%E6%A8%A1%E7%B5%84%E5%8C%96-2-commonjs-26d2b2071d80<br />
+[refer2]<br /> https://dwatow.github.io/2018/02-13-js-module-require-exports/<br />
+[def]<br /> 同步 | 一個檔案視為一個模組，讓模組回傳該回傳的東西<br />
 [example] <br />
 - Commonjs.js
 ``` javascript
@@ -34,14 +34,14 @@ extend只適合用在 父 跟 子 是相同的 ex: Animal(父) > Dog(子)
 ``` javascript
 document.getElementById("myDIV").classList.add("mystyle", "anotherClass", "thirdClass");
 ```
--Remove class
+- Remove class
 [methods] <br />
 ``` javascript
 document.getElementById("myDIV").classList.remove("mystyle");
 ```
 ## 函式
 
-- 宣告式 (Function Declarations)
+### 宣告式 (Function Declarations)
 [methods]  <br />
 ``` javascript
 function myFunc(a, b) {
@@ -53,7 +53,7 @@ function myFunc(a, b) {
 - 有Hoisting
 - 有this, arguments(帶入的參數值)
 ``` 
-- 匿名表達式 (Function Expressions w/o Function Name)
+### 匿名表達式 (Function Expressions w/o Function Name)
 [methods] <br />
 ``` javascript
 const myFunc = function (a, b) {
@@ -65,7 +65,7 @@ const myFunc = function (a, b) {
 - 不具 Hoisting 效果
 - 有arguments
 
-- 箭頭函示
+### 箭頭函示
 [methods] <br />
 const sayHello = () => `Hello!`;
 [note]<br />
