@@ -3,6 +3,29 @@
 
 1. 寫文章內容: https://nuxtjs.org/tutorials/creating-blog-with-nuxt-content#lets-create-our-markdown-page
 
+===== Nuxt with firebase hosting =====
+教學(注意聽說明): https://www.youtube.com/watch?v=AzO-KVMx7lo&list=PLGPXS6A9wDNdpbo-8F7dyCKf0ynWiPiP9&index=10
+
+firebase.json //
+{
+  "functions": {
+    "source": ".output/server", // SSR的 server
+    "runtime": "nodejs18"
+  },
+  "hosting": {
+    "target": "nuxtapp",
+    "public": ".output/public",
+    "cleanUrls": true,
+      // "function": "server" : server 對應到 .output/server/index.mjs 裡面的 export { s as server } 
+      // 如果是 export { s as nuxtserver }  > "function": "nuxtserver"
+    "rewrites": [{ "source": "**", "function": "server"}], 
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"]
+  }
+}
+
+package.json //
+deploy script: firebase target:apply hosting nuxtapp shopexploration-front-dev && cd .output/server && npm i && cd .. && firebase deploy
+
 === 直接設定router
 <NuxtLink to="/">Home page</NuxtLink>
 

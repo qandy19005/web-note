@@ -18,6 +18,10 @@ Q: 從設定HEAD
  git reset HEAD~5 // 從目前的 HEAD 倒退5個 Commit
  git reset ffa7c0c // 設定 HEAD 為 ffa7c0c 這一個 Commit
 
+Q: Commit覆蓋
+ git commit --amend
+ git push origin 分支名稱 --force
+
 Q: 強制送到遠端分支
  git push origin 分支名稱 --force
 
@@ -36,7 +40,7 @@ npm install "https://github.com/shakacode/bootstrap-loader.git#branch-name" --sa
 Q: Commit返回 reset (soft hard mixed)
  commit退回至遠端develop
  git reset --hard origin/develop 
-
+ 
 Q: 合併commit
 1. git rebase -i {後一個commit}
 2. pick > squash

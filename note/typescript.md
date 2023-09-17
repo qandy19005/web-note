@@ -148,11 +148,33 @@ type bikeApi = ReturnType<typeof BikeApi>
 7.    return {
 8.      floatingFilterComponent: FloatingFilter,
 
-# enum
+## enum
 enum 可用 keyOf
-
 ## enum as type
 [des] 宣告enum為可用型別
 [example]
 1. import type { SwitchSize } from "@/types/enums" // if you dont use enum as constant
 2. type Size = SwitchSize.Small | SwitchSize.Large
+
+## Record
+[des] type當作key與另一個type當作value合併
+參考: https://pjchender.dev/ironman-2021/ironman-2021-day17/
+type Record<K extends keyof any, T> = {
+  [P in K]: T
+}
+
+[example]
+type AnimalType = "Cat" | "Dog" | "Pig"
+type Animal = {
+  name: string
+  age: number
+  color: string
+}
+
+const AnimalMap = Record<AnimalType, Animal>
+AnimalMap type will be like:
+{
+  Cat: Animal
+  Dog: Animal
+  Pig: Animal
+}
