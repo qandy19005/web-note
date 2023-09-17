@@ -19,9 +19,9 @@
 2. pick > squash
 
 - Commit 取消<br />
-  git reset HEAD^ // 從目前的 HEAD 倒退1個 Commit
-  git reset HEAD~5 // 從目前的 HEAD 倒退5個 Commit
-  git reset ffa7c0c // 設定 HEAD 為 ffa7c0c 這一個 Commit
+  git reset HEAD^ // 從目前的 HEAD 倒退1個 Commit<br />
+  git reset HEAD~5 // 從目前的 HEAD 倒退5個 Commit<br />
+  git reset ffa7c0c // 設定 HEAD 為 ffa7c0c 這一個 Commit<br />
 
 - Commit 覆蓋<br />
   git commit --amend
