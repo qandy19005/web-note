@@ -1,13 +1,18 @@
-## 部署多個app
-firebase.json加入
+## Tutorial
+- publish Nuxt3 project - https://www.youtube.com/watch?v=AzO-KVMx7lo
 
-1. 
-{
-  "hosting": {
-    "site": "goody-system-admin",
-    "public": "public",
-    ...
+## Note
+ - 部署多個app
+ 1. Step 1
+  firebase.json加入
+  ``` json
+  {
+    "hosting": {
+      "site": "${site-name}",
+      "public": "public",
+      ...
+    }
   }
-}
-
-2. firebase deploy --only hosting:goody-system-admin
+  ```
+2. Step 2 <br />
+  firebase deploy --only hosting:${site-name}

@@ -17,7 +17,7 @@ css 畫面smooth - https://www.youtube.com/watch?v=Xc6G3oV24yE
 - css3 Animation tutorial - https://eyesofkids.gitbooks.io/css3/content/contents/intro.html
 
 ## Note
-- 縮小
+- 縮小<br />
   transform: scale(0.9);
 - px em rem vw vh?
   - px絕對單位
