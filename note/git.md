@@ -9,14 +9,14 @@
   git log 
 
 - Push 步驟<br />
-  1. git status
-  2. git add .
-  3. git commit -m ""
-  4. git push origin -u asa (Feature也可用)
+1. git status
+2. git add .
+3. git commit -m ""
+4. git push origin -u asa (Feature也可用)
 
 - Commit 合併<br />
-  1. git rebase -i {後一個commit}
-  2. pick > squash
+1. git rebase -i {後一個commit}
+2. pick > squash
 
 - Commit 取消<br />
   git reset HEAD^ // 從目前的 HEAD 倒退1個 Commit
@@ -47,18 +47,18 @@
   npm install "https://github.com/shakacode/bootstrap-loader.git#branch-name"
 
 - Permission denied<br />
-  1. git config --global --list (檢查帳號)
-  2. git config --global user.name qandy19005 (設定帳號)
-  3. git config --global user.email qandy19005@gmail.com (設定信箱)
-  4. ssh-keygen -t rsa -C qandy19005@gmail.com (產生sshkey Enter到底)
-  5. /Users/***/.ssh (key存放的位置) (安裝的時候會顯示路徑)
+1. git config --global --list (檢查帳號)
+2. git config --global user.name qandy19005 (設定帳號)
+3. git config --global user.email qandy19005@gmail.com (設定信箱)
+4. ssh-keygen -t rsa -C qandy19005@gmail.com (產生sshkey Enter到底)
+5. /Users/***/.ssh (key存放的位置) (安裝的時候會顯示路徑)
 
 - Stash暫存步驟<br />
-  1. git stash save
-  2. git stash list 顯示所有暫存
-  3. git stash pop 取得最新
-  4. git stash drop 刪除最新
-  5. git stash clear 清空所有暫存
+1. git stash save
+2. git stash list 顯示所有暫存
+3. git stash pop 取得最新
+4. git stash drop 刪除最新
+5. git stash clear 清空所有暫存
 
 - Git flow<br />
   develop > release(for test) > master > develop
