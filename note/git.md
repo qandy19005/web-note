@@ -8,13 +8,13 @@
 - Commit 查看<br />
   git log 
 
-- Push 步驟<br />
+- Push 步驟
 1. git status
 2. git add .
 3. git commit -m ""
 4. git push origin -u asa (Feature也可用)
 
-- Commit 合併<br />
+- Commit 合併
 1. git rebase -i {後一個commit}
 2. pick > squash
 
@@ -46,14 +46,14 @@
 - 安裝遠端特定分支<br />
   npm install "https://github.com/shakacode/bootstrap-loader.git#branch-name"
 
-- Permission denied<br />
+- Permission denied
 1. git config --global --list (檢查帳號)
 2. git config --global user.name qandy19005 (設定帳號)
 3. git config --global user.email qandy19005@gmail.com (設定信箱)
 4. ssh-keygen -t rsa -C qandy19005@gmail.com (產生sshkey Enter到底)
 5. /Users/***/.ssh (key存放的位置) (安裝的時候會顯示路徑)
 
-- Stash暫存步驟<br />
+- Stash暫存步驟
 1. git stash save
 2. git stash list 顯示所有暫存
 3. git stash pop 取得最新
