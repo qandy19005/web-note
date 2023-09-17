@@ -177,7 +177,7 @@ console.log(obj) // { a: 1, b: 2, c: 3 } 傳入放愈後面位置的物件，它
 ```
 ### 物件陣列深層複製
 [description]<br>
-更改物件深層值不互相影響
+更改物件深層值不互相影響<br />
 1. 
 ``` javascript
 let newAry = JSON.parse(JSON.stringify(ary))
@@ -185,17 +185,17 @@ let newAry = JSON.parse(JSON.stringify(ary))
 2. lodash.clonedeep 複製多層物件
 
 ### (?.)
-[methods] ${object}?.key <br />
+[methods]<br /> ${object}?.key <br />
 [description] <br />
-在進入key之前，檢查物件${object}是否為null或undefind
+在進入key之前，檢查物件${object}是否為null或undefind<br />
 [example] <br />
-user?.name = user && user.name(先判斷user是否存在在判斷)
-[advanced] <br />
+user?.name = user && user.name(先判斷user是否存在在判斷)<br />
+[advanced] <br /> ??(below example)
 ### (??)
 [example] A ? A : B = A ?? B <br />
 Q: 若profile為null或undefind則帶入defaultProfile<br />
 A: const defaultProfile = { age: 0, contry: 'America' } ;<br />
-   user?.profile ?? defaultProfile;
+&nbsp;user?.profile ?? defaultProfile;
 
 ### 若物件為null照正常判斷
 [methods] (${object} || {}).key <br />
@@ -206,21 +206,32 @@ A: const defaultProfile = { age: 0, contry: 'America' } ;<br />
  Boolean
 
 ### 物件跑forEach
-[methods] 1. Object.keys(${object}).forEach<br />
-  顯示object key 
-[methods] 2. Object.values(${object}).forEach<br />
-  顯示object value 
-[methods] 3. Object.entries(${object}).forEach<br />
-  顯示 object key, value
+[methods]<br />
+顯示object key <br />
+``` javascript
+  Object.keys(${object}).forEach
+```
+[methods]<br />
+顯示object value <br />
+``` javascript
+Object.values(${object}).forEach
+```
+[methods]<br />
+顯示 object key, value
+``` javascript
+Object.entries(${object}).forEach
+```
 ## File
 
 ### 判斷File格式 
-[methods] ${file} instanceof File <br />
+[methods]<br />
+``` javascript
+${file} instanceof File 
+```
 [return]<br />
- Boolean
+Boolean
 
 ## 時間處理
-[格式]
 ``` javascript
 const localDate = new Date(dateFromAPI);
 const localDateString = localDate.toLocaleDateString(undefined, {  
@@ -263,7 +274,7 @@ error: Blocked a frame with origin "null" from accessing a cross-origin frame<br
 [refer]<br /> https://stackoverflow.com/questions/29983786/blocked-a-frame-of-origin-null-from-accessing-a-cross-origin-frame-chrome
 ## 其他
 ### 斷言
-[methods] 辨識後加上 ! <br />
+[methods] <br />辨識後加上 ! <br />
 [example] <br />
 ``` javascript
 const partItem: Partial<SpecificPartType> = reactive({})
